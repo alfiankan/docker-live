@@ -25,6 +25,14 @@ echo ">>> Configuring chroot"
 echo ">>> Applying overlay"
 rsync --verbose --archive --ignore-existing --one-file-system --chown root:root --exclude README.md ${SOURCE_DIR}/overlay/ ${BUILD_DIR}/chroot/
 
+echo "##################################"
+
+echo "CEK KOPIAN"
+ls ${BUILD_DIR}/chroot/
+
+echo "##################################"
+
+
 # Run the hooks
 rsync --archive --one-file-system --quiet ${SOURCE_DIR}/hooks ${BUILD_DIR}/chroot/
 for hook in $(find ${BUILD_DIR}/chroot/hooks -maxdepth 1 -executable -type f | sort); do

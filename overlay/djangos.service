@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/djangoapp
+ExecStart=/usr/local/bin/gunicorn djangoapp.wsgi --bind 0.0.0.0:80
+#ExecStart=ls -l
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
