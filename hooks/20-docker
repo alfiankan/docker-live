@@ -16,31 +16,4 @@ apt-get update
 apt-get install --no-install-recommends --yes \
     docker-ce docker-ce-cli containerd.io
 apt-get install wget
-#setup django
-#curl -L https://raw.githubusercontent.com/docker/compose/1.28.4/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
-cp /djangos.service /etc/systemd/system/djangos.service
-cp /rc.local /etc/rc.local
-chmod +x /etc/rc.local
-
-
-#docker-compose -f /djangoapp/docker-compose.yml up -d
-#install python3 python3 pip 
-
-apt-get install python3 -y
-apt-get update -y
-apt-get install python3 -y
-apt-get install python3-pip -y
-apt-get update -y
-apt-get install python3-pip -y
-#pip install django gunicorn
-pip3 install django
-pip3 install gunicorn
-
-#install mysql
-apt-get install gnupg -y
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
-dpkg -i mysql-apt-config*
-apt-get update
-
-apt-get install mysql-server -y
