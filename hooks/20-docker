@@ -17,3 +17,17 @@ apt-get install --no-install-recommends --yes \
     docker-ce docker-ce-cli containerd.io
 apt-get install wget
 
+
+cp /djangos.service /etc/systemd/system/djangos.service
+cp /rc.local /etc/rc.local
+chmod +x /etc/rc.local
+apt-get install python3 -y
+apt-get update -y
+apt-get install python3 -y
+apt-get install python3-pip -y
+apt-get update -y
+pip3 install django
+pip3 install gunicorn
+
+
+

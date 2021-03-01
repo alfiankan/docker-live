@@ -1,0 +1,13 @@
+[unit]
+Description=DjangoApp
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/djangoapp
+ExecStart=/usr/local/bin/gunicorn djangoapp.wsgi --bind 0.0.0.0:80
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
